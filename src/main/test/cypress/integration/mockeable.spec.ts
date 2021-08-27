@@ -1,14 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const baseUrl: string = Cypress.config().baseUrl
+import * as Helper from '../support/helpers'
+import * as Http from '../support/get-mocks'
+import { OkGet } from '../helpers/http-helpers'
 
 describe('Test base url', () => {
   beforeEach(() => {
-    cy.request(`${baseUrl}/teste`).as('getMockeable')
+    OkGet()
   })
   it('Shoul Validate header', () => {
-    cy.get('@getMockeable')
-      .its('headers')
-      .its('content-type')
-      .should('include', 'application/json')
+    Http.mockGetHeader(OkGet())
+    Helper.testHttpHeadersContentType()
   })
 })

@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://demo4756158.mockable.io",
+    "baseUrl": "http://demo4756158.mockable.io",
     "fixturesFolder": false,
     "supportFile": "src/main/test/cypress/support/index.js",
     "pluginsFile": "src/main/test/cypress/plugins/index.js",
